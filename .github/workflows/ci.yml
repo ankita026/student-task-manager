@@ -22,8 +22,17 @@ jobs:
           node-version: 22
           cache: npm
 
+      
       - name: Install dependencies
         run: npm ci
 
+      - name: Build and validate project
+        run: |
+          npm run
+          node -e "const fs = require('fs'); for (const file of ['index.html', 'style.css', 'script.js']) { if (!fs.existsSync(file)) throw new Error('Missing file: ' + file); } JSON.parse(fs.readFileSync('package.json', 'utf8')); console.log('Project files and package.json validated successfully.');"
+
+      - name: Check code quality
+        run: npm run lint
       - name: Run tests
         run: npm test
+
