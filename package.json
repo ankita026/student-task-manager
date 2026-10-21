@@ -1,0 +1,24 @@
+{
+  "name": "student-task-manager",
+  "version": "1.0.0",
+  "description": "Student Task Management System with automated testing and CI/CD",
+  "main": "script.js",
+  "scripts": {
+    "test": "vitest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankita026/student-task-manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankita026/student-task-manager/issues"
+  },
+  "homepage": "https://github.com/ankita026/student-task-manager#readme",
+  "devDependencies": {
+    "jsdom": "^27.0.1",
+    "vitest": "^3.2.7"
+  }
+}
