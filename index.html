@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">S</div>
+                <span>StudyFlow</span>
+            </div>
+
+            <p class="sidebar-label">WORKSPACE</p>
+
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-link active">
+                    <span>▦</span> Dashboard
+                </a>
+                <a href="#tasks-section" class="nav-link">
+                    <span>☷</span> My Tasks
+                </a>
+                <a href="#progress-section" class="nav-link">
+                    <span>◷</span> My Progress
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="profile-avatar">A</div>
+                <div class="profile-info">
+                    <strong>Ankita</strong>
+                    <span>Student</span>
+                </div>
+                <span class="profile-dot"></span>
+            </div>
+        </aside>
+
+        <!-- Main dashboard -->
+        <main class="dashboard" id="dashboard">
+
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+                    <h1>Student Dashboard</h1>
+                </div>
+
+                <div class="top-profile">
+                    <div class="profile-avatar">A</div>
+                    <div>
+                        <strong>Ankita</strong>
+                        <span>Student account</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Welcome section -->
+            <section class="welcome-card">
+                <div class="welcome-content">
+                    <p class="eyebrow">YOUR STUDY SPACE</p>
+                    <h2>Hey, Ankita! Let's get things done.</h2>
+                    <p>
+                        One task at a time. Keep showing up for your goals.
+                    </p>
+                    <a href="#tasks-section" class="primary-link">
+                        View my tasks →
+                    </a>
+                </div>
+
+                <div class="welcome-decoration" aria-hidden="true">
+                    <div class="decoration-circle">✦</div>
+                </div>
+            </section>
+
+            <!-- Task statistics -->
+            <section class="stats-grid" aria-label="Task statistics">
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Total tasks</span>
+                        <span class="stat-icon purple-icon">▤</span>
+                    </div>
+                    <p class="stat-number" id="total-count">0</p>
+                    <p class="stat-description">All your study tasks</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Pending</span>
+                        <span class="stat-icon orange-icon">◷</span>
+                    </div>
+                    <p class="stat-number" id="pending-count">0</p>
+                    <p class="stat-description">Still to be completed</p>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-top">
+                        <span>Completed</span>
+                        <span class="stat-icon green-icon">✓</span>
+                    </div>
+                    <p class="stat-number" id="completed-count">0</p>
+                    <p class="stat-description">Tasks you've finished</p>
+                </article>
+
+            </section>
+
+            <!-- Progress section -->
+            <section class="progress-card" id="progress-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">YOUR ACHIEVEMENTS</p>
+                        <h2>Study progress</h2>
+                    </div>
+                    <span id="completion-percent" class="progress-percent">
+                        0%
+                    </span>
+                </div>
+
+                <p class="progress-description">
+                    Keep going! Every completed task counts.
+                </p>
+
+                <div
+                    class="progress-track"
+                    role="progressbar"
+                    aria-label="Task completion progress"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0"
+                    id="progress-track"
+                >
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+
+                <p class="progress-note" id="progress-note">
+                    Start by adding your first task.
+                </p>
+            </section>
+
+            <!-- Task management -->
+            <section class="tasks-card" id="tasks-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">STAY ORGANIZED</p>
+                        <h2>My tasks</h2>
+                    </div>
+                    <span class="live-label">
+                        <span class="live-dot"></span> Live tracker
+                    </span>
+                </div>
+
+                <form id="task-form">
+                    <input
+                        type="text"
+                        id="task-input"
+                        placeholder="What do you need to do?"
+                        aria-label="Task name"
+                        required
+                    >
+                    <button type="submit" class="add-button">
+                        + Add task
+                    </button>
+                </form>
+
+                <div class="filters" aria-label="Filter tasks">
+                    <button
+                        type="button"
+                        data-filter="all"
+                        class="active"
+                    >
+                        All tasks
+                    </button>
+                    <button type="button" data-filter="pending">
+                        Pending
+                    </button>
+                    <button type="button" data-filter="completed">
+                        Completed
+                    </button>
+                </div>
+
+                <ul id="task-list"></ul>
+
+                <p id="empty-message">
+                    No tasks yet. Add your first task!
+                </p>
+            </section>
+
+            <footer>
+                <p>StudyFlow · Built for better study habits.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
